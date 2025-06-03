@@ -1,0 +1,12 @@
+{
+  "name": "typescript-auth-service",
+  "version": "1.0.0",
+  "description": "Authentication and Authorization Service",
+  "main": "dist/index.js",
+  "author": "Gabriel Demetrios Lafis",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "typescript": "^5.0.0"
+  }
+}
