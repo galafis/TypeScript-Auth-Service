@@ -2,7 +2,6 @@
 
 <div align="center">
 
-![TypeScript Auth Service - Professional Authentication Solution](https://via.placeholder.com/1200x400.png?text=TypeScript+Auth+Service+-+Professional+Authentication+Solution)
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=for-the-badge&logo=node.js&logoColor=white)
