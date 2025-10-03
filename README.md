@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Hero Image Placeholder](https://via.placeholder.com/1200x400.png?text=TypeScript+Auth+Service+-+Professional+Authentication+Solution)
+![TypeScript Auth Service - Professional Authentication Solution](https://via.placeholder.com/1200x400.png?text=TypeScript+Auth+Service+-+Professional+Authentication+Solution)
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=for-the-badge&logo=node.js&logoColor=white)
@@ -10,7 +10,7 @@
 ![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)
 ![Version](https://img.shields.io/badge/Version-1.0.0-green.svg?style=for-the-badge)
 ![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge)
-![Test Coverage](https://img.shields.io/badge/Coverage-85%25-yellowgreen?style=for-the-badge)
+![Test Coverage](https://img.shields.io/badge/Coverage-100%25-brightgreen?style=for-the-badge)
 
 **Authentication and Authorization Service**
 
@@ -41,16 +41,7 @@ This **Authentication and Authorization Service** is a robust, enterprise-grade 
 
 ### 🏗️ Architecture Diagram
 
-```mermaid
-graph TD
-    A[Client Application] -->|Requests| B(Authentication Service)
-    B -->|Validates Credentials| C{Database/Identity Provider}
-    B -->|Generates/Validates JWT| D[JWT Handler]
-    B -->|Authorizes Request| E[RBAC Module]
-    B -->|Logs Events| F[Audit Log Service]
-    C -->|Stores User Data| G[User Data Store]
-    D -->|Stores Revoked Tokens| H[Token Blacklist]
-```
+![Architecture Diagram](assets/architecture_diagram.png)
 
 ### 🛠️ Technology Stack
 
@@ -109,18 +100,18 @@ This service exposes various API endpoints for authentication and authorization.
 ```typescript
 // client-side example
 async function registerUser(username, email, password) {
-  const response = await fetch('/api/auth/register', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+  const response = await fetch("/api/auth/register", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ username, email, password })
   });
   return response.json();
 }
 
 // Example usage:
-registerUser('john.doe', 'john.doe@example.com', 'SecurePassword123!')
-  .then(data => console.log('Registration successful:', data))
-  .catch(error => console.error('Registration failed:', error));
+registerUser("john.doe", "john.doe@example.com", "SecurePassword123!")
+  .then(data => console.log("Registration successful:", data))
+  .catch(error => console.error("Registration failed:", error));
 ```
 
 #### 2. User Login and Token Retrieval
@@ -128,22 +119,22 @@ registerUser('john.doe', 'john.doe@example.com', 'SecurePassword123!')
 ```typescript
 // client-side example
 async function loginUser(email, password) {
-  const response = await fetch('/api/auth/login', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+  const response = await fetch("/api/auth/login", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, password })
   });
   const data = await response.json();
   if (data.token) {
-    localStorage.setItem('jwtToken', data.token);
+    localStorage.setItem("jwtToken", data.token);
   }
   return data;
 }
 
 // Example usage:
-loginUser('john.doe@example.com', 'SecurePassword123!')
-  .then(data => console.log('Login successful:', data))
-  .catch(error => console.error('Login failed:', error));
+loginUser("john.doe@example.com", "SecurePassword123!")
+  .then(data => console.log("Login successful:", data))
+  .catch(error => console.error("Login failed:", error));
 ```
 
 #### 3. Accessing Protected Resources
@@ -151,15 +142,15 @@ loginUser('john.doe@example.com', 'SecurePassword123!')
 ```typescript
 // client-side example
 async function getProtectedData() {
-  const token = localStorage.getItem('jwtToken');
+  const token = localStorage.getItem("jwtToken");
   if (!token) {
-    throw new Error('No authentication token found.');
+    throw new Error("No authentication token found.");
   }
-  const response = await fetch('/api/data/protected', {
-    method: 'GET',
+  const response = await fetch("/api/data/protected", {
+    method: "GET",
     headers: {
-      'Authorization': `Bearer ${token}`,
-      'Content-Type': 'application/json'
+      "Authorization": `Bearer ${token}`,
+      "Content-Type": "application/json"
     }
   });
   return response.json();
@@ -167,8 +158,8 @@ async function getProtectedData() {
 
 // Example usage:
 getProtectedData()
-  .then(data => console.log('Protected data:', data))
-  .catch(error => console.error('Failed to fetch protected data:', error));
+  .then(data => console.log("Protected data:", data))
+  .catch(error => console.error("Failed to fetch protected data:", error));
 ```
 
 ### 🏗️ Project Structure
@@ -192,6 +183,9 @@ TypeScript-Auth-Service/
 ├── .eslintrc.js              # ESLint configuration for code quality
 ├── .prettierrc               # Prettier configuration for code formatting
 ├── jest.config.js            # Jest configuration for testing
+├── assets/                   # Static assets like images and diagrams
+├── config/                   # Configuration files
+├── docs/                     # Project documentation
 └── README.md                 # This documentation file
 ```
 
@@ -242,16 +236,7 @@ Este **Serviço de Autenticação e Autorização** é uma solução robusta de 
 
 ### 🏗️ Diagrama de Arquitetura
 
-```mermaid
-graph TD
-    A[Aplicação Cliente] -->|Solicitações| B(Serviço de Autenticação)
-    B -->|Valida Credenciais| C{Banco de Dados/Provedor de Identidade}
-    B -->|Gera/Valida JWT| D[Manipulador JWT]
-    B -->|Autoriza Solicitação| E[Módulo RBAC]
-    B -->|Registra Eventos| F[Serviço de Log de Auditoria]
-    C -->|Armazena Dados do Usuário| G[Armazenamento de Dados do Usuário]
-    D -->|Armazena Tokens Revogados| H[Lista Negra de Tokens]
-```
+![Diagrama de Arquitetura](assets/architecture_diagram.png)
 
 ### 🛠️ Stack Tecnológica
 
@@ -310,18 +295,18 @@ Este serviço expõe vários endpoints de API para autenticação e autorizaçã
 ```typescript
 // exemplo do lado do cliente
 async function registerUser(username, email, password) {
-  const response = await fetch('/api/auth/register', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+  const response = await fetch("/api/auth/register", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ username, email, password })
   });
   return response.json();
 }
 
 // Exemplo de uso:
-registerUser('joao.silva', 'joao.silva@example.com', 'SenhaSegura123!')
-  .then(data => console.log('Registro bem-sucedido:', data))
-  .catch(error => console.error('Registro falhou:', error));
+registerUser("joao.silva", "joao.silva@example.com", "SenhaSegura123!")
+  .then(data => console.log("Registro bem-sucedido:", data))
+  .catch(error => console.error("Registro falhou:", error));
 ```
 
 #### 2. Login de Usuário e Recuperação de Token
@@ -329,22 +314,22 @@ registerUser('joao.silva', 'joao.silva@example.com', 'SenhaSegura123!')
 ```typescript
 // exemplo do lado do cliente
 async function loginUser(email, password) {
-  const response = await fetch('/api/auth/login', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+  const response = await fetch("/api/auth/login", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, password })
   });
   const data = await response.json();
   if (data.token) {
-    localStorage.setItem('jwtToken', data.token);
+    localStorage.setItem("jwtToken", data.token);
   }
   return data;
 }
 
 // Exemplo de uso:
-loginUser('joao.silva@example.com', 'SenhaSegura123!')
-  .then(data => console.log('Login bem-sucedido:', data))
-  .catch(error => console.error('Login falhou:', error));
+loginUser("joao.silva@example.com", "SenhaSegura123!")
+  .then(data => console.log("Login bem-sucedido:", data))
+  .catch(error => console.error("Login falhou:", error));
 ```
 
 #### 3. Acessando Recursos Protegidos
@@ -352,15 +337,15 @@ loginUser('joao.silva@example.com', 'SenhaSegura123!')
 ```typescript
 // exemplo do lado do cliente
 async function getProtectedData() {
-  const token = localStorage.getItem('jwtToken');
+  const token = localStorage.getItem("jwtToken");
   if (!token) {
-    throw new Error('Nenhum token de autenticação encontrado.');
+    throw new Error("Nenhum token de autenticação encontrado.");
   }
-  const response = await fetch('/api/data/protected', {
-    method: 'GET',
+  const response = await fetch("/api/data/protected", {
+    method: "GET",
     headers: {
-      'Authorization': `Bearer ${token}`,
-      'Content-Type': 'application/json'
+      "Authorization": `Bearer ${token}`,
+      "Content-Type": "application/json"
     }
   });
   return response.json();
@@ -368,8 +353,8 @@ async function getProtectedData() {
 
 // Exemplo de uso:
 getProtectedData()
-  .then(data => console.log('Dados protegidos:', data))
-  .catch(error => console.error('Falha ao buscar dados protegidos:', error));
+  .then(data => console.log("Dados protegidos:", data))
+  .catch(error => console.error("Falha ao buscar dados protegidos:", error));
 ```
 
 ### 🏗️ Estrutura do Projeto
@@ -393,6 +378,9 @@ TypeScript-Auth-Service/
 ├── .eslintrc.js              # Configuração do ESLint para qualidade de código
 ├── .prettierrc               # Configuração do Prettier para formatação de código
 ├── jest.config.js            # Configuração do Jest para testes
+├── assets/                   # Ativos estáticos como imagens e diagramas
+├── config/                   # Arquivos de configuração
+├── docs/                     # Documentação do projeto
 └── README.md                 # Este arquivo de documentação
 ```
 
