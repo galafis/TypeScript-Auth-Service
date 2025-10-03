@@ -10,6 +10,8 @@
 ![Version](https://img.shields.io/badge/Version-1.0.0-green.svg?style=for-the-badge)
 ![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge)
 ![Test Coverage](https://img.shields.io/badge/Coverage-100%25-brightgreen?style=for-the-badge)
+![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Deployed-blue?style=for-the-badge&logo=github)
+
 
 **Authentication and Authorization Service**
 
@@ -53,6 +55,9 @@ This **Authentication and Authorization Service** is a robust, enterprise-grade 
 *   **ts-node** - TypeScript execution environment for Node.js.
 
 ### 🚀 Quick Start
+
+**Live Demo:** You can see a live demo of the API documentation and basic usage on [GitHub Pages](https://galafis.github.io/TypeScript-Auth-Service/).
+
 
 #### Prerequisites
 
@@ -248,6 +253,9 @@ Este **Serviço de Autenticação e Autorização** é uma solução robusta de 
 *   **ts-node** - Ambiente de execução TypeScript para Node.js.
 
 ### 🚀 Início Rápido
+
+**Demonstração ao Vivo:** Você pode ver uma demonstração ao vivo da documentação da API e uso básico no [GitHub Pages](https://galafis.github.io/TypeScript-Auth-Service/).
+
 
 #### Pré-requisitos
 
