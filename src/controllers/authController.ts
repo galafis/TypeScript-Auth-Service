@@ -11,7 +11,7 @@ interface User {
 }
 
 // In a real application, this would interact with a database
-const users: User[] = [];
+export const users: User[] = [];
 
 export const register = async (req: Request, res: Response) => {
   try {
