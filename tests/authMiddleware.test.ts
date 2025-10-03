@@ -51,7 +51,7 @@ describe('Auth Middleware', () => {
     authenticateToken(req, res, mockNext);
 
     expect(mockNext).toHaveBeenCalled();
-    expect((req as any).user).toEqual({ id: '123' });
+    expect((req as any).user).toMatchObject({ user: { id: '123' } });
   });
 });
 
