@@ -1,0 +1,1 @@
+Este diretório contém assets como imagens, diagramas e outros recursos visuais.
